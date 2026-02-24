@@ -52,3 +52,10 @@ ul {
   padding: 20px;
   margin-top: 40px;
 }
+.logo{
+  width:120px;
+  height:auto;
+  display:block;
+  margin:0 auto 15px auto;
+  border-radius:10px;
+}
