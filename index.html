@@ -18,7 +18,7 @@
     <nav class="nav">
       <a href="index.html"><i class="fas fa-home"></i> Home</a>
       <a href="mangoes.html"><i class="fas fa-lemon"></i> Mangoes</a>
-      <a href="rice.html"><i class="fas fa-seedling"></i> Rice</a>
+      <a href="spices.html"><i class="fas fa-seedling"></i> Spices</a>
       <a href="raw-tobacco.html"><i class="fas fa-leaf"></i> Raw Tobacco</a>
     </nav>
     <a class="btn" href="#contact"><i class="fas fa-envelope"></i> Contact Us</a>
@@ -38,7 +38,7 @@
     <h2><i class="fas fa-box-open"></i> Our Products</h2>
     <ul>
       <li><a href="mangoes.html"><i class="fas fa-lemon"></i> Mangoes</a></li>
-      <li><a href="rice.html"><i class="fas fa-seedling"></i> Rice</a></li>
+      <li><a href="spices.html"><i class="fas fa-seedling"></i> Spices</a></li>
       <li><a href="raw-tobacco.html"><i class="fas fa-leaf"></i> Raw Tobacco</a></li>
     </ul>
   </section>
@@ -80,15 +80,31 @@
   document.getElementById("year").textContent = new Date().getFullYear();
   
   // Highlight current navigation link
-  const navLinks = document.querySelectorAll('.nav a');
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  
-  navLinks.forEach(link => {
-    const href = link.getAttribute('href');
-    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-      link.classList.add('active');
+  function highlightCurrentNav() {
+    const navLinks = document.querySelectorAll('.nav a');
+    let currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    
+    // Handle cases where pathname is just "/" or empty
+    if (currentPage === '' || currentPage === '/') {
+      currentPage = 'index.html';
     }
-  });
+    
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      // Remove any query parameters or hash if present
+      const cleanHref = href.split('?')[0].split('#')[0];
+      
+      if (cleanHref === currentPage || (currentPage === 'index.html' && cleanHref === 'index.html')) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  }
+  
+  // Run on page load and when DOM is ready
+  highlightCurrentNav();
+  document.addEventListener('DOMContentLoaded', highlightCurrentNav);
 </script>
 
 </body>
