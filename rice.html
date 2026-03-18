@@ -3,6 +3,7 @@
 <head>
   <title>Rice | Nandi Enterprises</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,10 +15,10 @@
     <p>Indian Rice Exports</p>
 
     <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="mangoes.html">Mangoes</a>
-      <a href="rice.html">Rice</a>
-      <a href="raw-tobacco.html">Raw Tobacco</a>
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="mangoes.html"><i class="fas fa-lemon"></i> Mangoes</a>
+      <a href="rice.html"><i class="fas fa-seedling"></i> Rice</a>
+      <a href="raw-tobacco.html"><i class="fas fa-leaf"></i> Raw Tobacco</a>
     </nav>
   </div>
 </header>
@@ -45,7 +46,20 @@
 </main>
 
 <footer class="footer">© <span id="year"></span> Nandi Enterprises</footer>
-<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+  
+  // Highlight current navigation link
+  const navLinks = document.querySelectorAll('.nav a');
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+      link.classList.add('active');
+    }
+  });
+</script>
 
 </body>
 </html>
