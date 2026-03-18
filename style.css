@@ -213,7 +213,7 @@ main {
 /* ===== CARDS ===== */
 .card {
   background: white;
-  padding: clamp(25px, 4vw, 40px);
+  padding: clamp(20px, 3vw, 30px);
   margin-bottom: clamp(20px, 3vw, 32px);
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(44, 62, 80, 0.1);
@@ -486,7 +486,7 @@ main {
   /* Main content padding */
   main {
     padding: 18px 12px;
-    margin-top: 18px;
+    margin-top: 35px;
   }
   
   /* Card adjustments */
@@ -608,7 +608,7 @@ main {
   /* Main content */
   main {
     padding: 14px 11px;
-    margin-top: 15px;
+    margin-top: 25px;
   }
   
   /* Cards */
