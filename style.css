@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   line-height: 1.6;
   color: #2c3e50;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -135,7 +135,6 @@ body {
 
 .nav a:hover {
   background: linear-gradient(135deg, rgba(255, 152, 0, 0.8) 0%, rgba(255, 152, 0, 0.6) 100%);
-  transform: translateY(-4px) scale(1.05);
   border-color: rgba(255, 152, 0, 1);
   box-shadow: 0 8px 20px rgba(255, 152, 0, 0.3);
 }
@@ -187,7 +186,6 @@ body {
 
 .btn:hover, .btn2:hover {
   background: linear-gradient(135deg, #f57c00 0%, #e65100 100%);
-  transform: translateY(-5px);
   box-shadow: 0 12px 25px rgba(255, 152, 0, 0.4);
   border-color: rgba(255, 255, 255, 0.5);
   color: #ffffff !important;
@@ -234,7 +232,6 @@ main {
 }
 
 .card:hover {
-  transform: translateY(-8px);
   box-shadow: 0 15px 40px rgba(44, 62, 80, 0.15);
   border-color: rgba(255, 152, 0, 0.2);
 }
@@ -321,7 +318,8 @@ main {
 .card a[href*="tel:"],
 .card a[href*="mailto:"],
 .card a[href*="wa.me"],
-.card a[href*="instagram"] {
+.card a[href*="instagram"],
+.card a[href*="linkedin"] {
   color: #ff9800;
   text-decoration: none;
   font-weight: 600;
@@ -335,7 +333,8 @@ main {
 .card a[href*="tel:"]::after,
 .card a[href*="mailto:"]::after,
 .card a[href*="wa.me"]::after,
-.card a[href*="instagram"]::after {
+.card a[href*="instagram"]::after,
+.card a[href*="linkedin"]::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -349,7 +348,8 @@ main {
 .card a[href*="tel:"]:hover,
 .card a[href*="mailto:"]:hover,
 .card a[href*="wa.me"]:hover,
-.card a[href*="instagram"]:hover {
+.card a[href*="instagram"]:hover,
+.card a[href*="linkedin"]:hover {
   color: #f57c00;
 }
 
