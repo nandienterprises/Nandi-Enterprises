@@ -213,8 +213,8 @@ main {
 /* ===== CARDS ===== */
 .card {
   background: white;
-  padding: clamp(20px, 3vw, 30px);
-  margin-bottom: clamp(20px, 3vw, 32px);
+  padding: clamp(18px, 2.5vw, 28px);
+  margin-bottom: clamp(18px, 2.5vw, 28px);
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(44, 62, 80, 0.1);
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
