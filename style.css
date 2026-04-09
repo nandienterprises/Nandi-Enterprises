@@ -419,6 +419,19 @@ main {
   display: none;
 }
 
+#contact-us-btn.hidden {
+  display: none;
+}
+
+/* ===== PRE-ORDER BUTTON ===== */
+#preorder-btn {
+  display: inline-block;
+}
+
+#preorder-btn.hidden {
+  display: none;
+}
+
 /* ===== FOOTER ===== */
 .footer {
   background: linear-gradient(135deg, #1a472a 0%, #0f2d1a 100%);

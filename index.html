@@ -21,7 +21,8 @@
       <a href="spices.html"><i class="fas fa-seedling"></i> Spices</a>
       <a href="raw-tobacco.html"><i class="fas fa-leaf"></i> Raw Tobacco</a>
     </nav>
-    <a class="btn" href="#contact"><i class="fas fa-envelope"></i> Contact Us</a>
+    <a id="contact-us-btn" class="btn" href="#contact"><i class="fas fa-envelope"></i> Contact Us</a>
+    <a id="preorder-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSe58K4BhrN2COjhzLW6MaZHS1R-U9zwXfd6Hzp9A9pT57UgTw/viewform?usp=header" target="_blank" class="btn hidden"><i class="fas fa-shopping-cart"></i> Pre-order Now</a>
     <div id="announcement-banner" class="announcement-banner">
       <div class="announcement-content">
         <i class="fas fa-bell"></i>
@@ -35,6 +36,21 @@
         <i class="fas fa-bell"></i>
       </div>
     </div>
+    
+    <div id="taking-orders-banner" class="announcement-banner hidden">
+      <div class="announcement-content">
+        <i class="fas fa-bell"></i>
+        <span class="announcement-text">🎉 We are now taking pre-orders for mangoes - Grab it fast!</span>
+        <i class="fas fa-bell"></i>
+        <i class="fas fa-bell"></i>
+        <span class="announcement-text">🎉 We are now taking pre-orders for mangoes - Grab it fast!</span>
+        <i class="fas fa-bell"></i>
+        <i class="fas fa-bell"></i>
+        <span class="announcement-text">🎉 We are now taking pre-orders for mangoes - Grab it fast!</span>
+        <i class="fas fa-bell"></i>
+      </div>
+    </div>
+    
   </div>
 </header>
 
@@ -125,18 +141,26 @@
   // Handle announcement banner visibility based on deadline
   function checkAnnouncementDeadline() {
     const banner = document.getElementById('announcement-banner');
-    if (!banner) return;
+    const takingOrdersBanner = document.getElementById('taking-orders-banner');
+    const contactUsBtn = document.getElementById('contact-us-btn');
+    const preorderBtn = document.getElementById('preorder-btn');
     
-    // Deadline: April 14, 2026, 12:00 AM EDT (UTC-4)
-    // Convert to UTC: April 14, 2026, 04:00 UTC
-    const deadlineUTC = new Date('2026-04-14T04:00:00Z');
+    // Pre-order deadline: April 14, 2026, 12:01 AM EST (UTC-5)
+    // Convert to UTC: April 14, 2026, 05:01 UTC
+    const preorderDeadlineUTC = new Date('2026-04-14T05:01:00Z');
     const now = new Date();
     
-    // If current time is past the deadline, hide the banner
-    if (now >= deadlineUTC) {
-      banner.classList.add('hidden');
+    // Show pre-order button and taking orders announcement, hide contact us button and opening soon announcement after deadline
+    if (now >= preorderDeadlineUTC) {
+      if (banner) banner.classList.add('hidden');
+      if (takingOrdersBanner) takingOrdersBanner.classList.remove('hidden');
+      if (contactUsBtn) contactUsBtn.classList.add('hidden');
+      if (preorderBtn) preorderBtn.classList.remove('hidden');
     } else {
-      banner.classList.remove('hidden');
+      if (banner) banner.classList.remove('hidden');
+      if (takingOrdersBanner) takingOrdersBanner.classList.add('hidden');
+      if (contactUsBtn) contactUsBtn.classList.remove('hidden');
+      if (preorderBtn) preorderBtn.classList.add('hidden');
     }
   }
   
