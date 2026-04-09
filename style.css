@@ -389,8 +389,8 @@ main {
 .announcement-content {
   display: flex;
   align-items: center;
-  gap: 15px;
-  animation: scroll-announcement 15s linear infinite;
+  gap: 80px;
+  animation: scroll-announcement 50s linear infinite;
   white-space: nowrap;
   color: white;
   font-weight: 600;
