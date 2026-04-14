@@ -21,35 +21,7 @@
       <a href="spices.html"><i class="fas fa-seedling"></i> Spices</a>
       <a href="raw-tobacco.html"><i class="fas fa-leaf"></i> Raw Tobacco</a>
     </nav>
-    <a id="contact-us-btn" class="btn" href="#contact"><i class="fas fa-envelope"></i> Contact Us</a>
-    <a id="preorder-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSe58K4BhrN2COjhzLW6MaZHS1R-U9zwXfd6Hzp9A9pT57UgTw/viewform?usp=header" target="_blank" class="btn hidden"><i class="fas fa-shopping-cart"></i> Pre-order Now</a>
-    <div id="announcement-banner" class="announcement-banner">
-      <div class="announcement-content">
-        <i class="fas fa-bell"></i>
-        <span class="announcement-text">Pre-orders for mangoes will open on April 14, 12:00 AM EST. Stay tuned!</span>
-        <i class="fas fa-bell"></i>
-        <i class="fas fa-bell"></i>
-        <span class="announcement-text">Pre-orders for mangoes will open on April 14, 12:00 AM EST. Stay tuned!</span>
-        <i class="fas fa-bell"></i>
-        <i class="fas fa-bell"></i>
-        <span class="announcement-text">Pre-orders for mangoes will open on April 14, 12:00 AM EST. Stay tuned!</span>
-        <i class="fas fa-bell"></i>
-      </div>
-    </div>
-    
-    <div id="taking-orders-banner" class="announcement-banner hidden">
-      <div class="announcement-content">
-        <i class="fas fa-bell"></i>
-        <span class="announcement-text">🎉 We are now taking pre-orders for mangoes - Grab it fast!</span>
-        <i class="fas fa-bell"></i>
-        <i class="fas fa-bell"></i>
-        <span class="announcement-text">🎉 We are now taking pre-orders for mangoes - Grab it fast!</span>
-        <i class="fas fa-bell"></i>
-        <i class="fas fa-bell"></i>
-        <span class="announcement-text">🎉 We are now taking pre-orders for mangoes - Grab it fast!</span>
-        <i class="fas fa-bell"></i>
-      </div>
-    </div>
+    <a id="preorder-btn" href="https://forms.gle/kWieJ5fxS3RY4bDJA" target="_blank" class="btn"><i class="fas fa-shopping-cart"></i> Pre-order Now</a>
     
   </div>
 </header>
@@ -64,8 +36,15 @@
 
   <section class="card">
     <h2><i class="fas fa-box-open"></i> Our Products</h2>
-    <ul>
-      <li><a href="mangoes.html"><i class="fas fa-lemon"></i> Mangoes</a></li>
+    <ul style="display: flex; flex-direction: column; gap: 12px;">
+      <li style="display: flex; align-items: center; gap: 12px; padding: 10px; background-color: #f0f8f0; border-radius: 8px;">
+        <a href="mangoes.html" style="display: flex; align-items: center; gap: 8px; flex: 1;">
+          <i class="fas fa-lemon"></i> 
+          Mangoes 
+          <span style="background-color: #28a745; color: white; padding: 3px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: bold;">LIVE</span>
+        </a>
+        <a href="https://forms.gle/kWieJ5fxS3RY4bDJA" target="_blank" class="btn" style="padding: 6px 12px; font-size: 0.85rem; white-space: nowrap;"><i class="fas fa-shopping-cart"></i> Book Now</a>
+      </li>
       <li><a href="spices.html"><i class="fas fa-seedling"></i> Spices</a></li>
       <li><a href="raw-tobacco.html"><i class="fas fa-leaf"></i> Raw Tobacco</a></li>
     </ul>
@@ -138,37 +117,7 @@
   highlightCurrentNav();
   document.addEventListener('DOMContentLoaded', highlightCurrentNav);
 
-  // Handle announcement banner visibility based on deadline
-  function checkAnnouncementDeadline() {
-    const banner = document.getElementById('announcement-banner');
-    const takingOrdersBanner = document.getElementById('taking-orders-banner');
-    const contactUsBtn = document.getElementById('contact-us-btn');
-    const preorderBtn = document.getElementById('preorder-btn');
-    
-    // Pre-order deadline: April 14, 2026, 12:01 AM EST (UTC-5)
-    // Convert to UTC: April 14, 2026, 05:01 UTC
-    const preorderDeadlineUTC = new Date('2026-04-14T05:01:00Z');
-    const now = new Date();
-    
-    // Show pre-order button and taking orders announcement, hide contact us button and opening soon announcement after deadline
-    if (now >= preorderDeadlineUTC) {
-      if (banner) banner.classList.add('hidden');
-      if (takingOrdersBanner) takingOrdersBanner.classList.remove('hidden');
-      if (contactUsBtn) contactUsBtn.classList.add('hidden');
-      if (preorderBtn) preorderBtn.classList.remove('hidden');
-    } else {
-      if (banner) banner.classList.remove('hidden');
-      if (takingOrdersBanner) takingOrdersBanner.classList.add('hidden');
-      if (contactUsBtn) contactUsBtn.classList.remove('hidden');
-      if (preorderBtn) preorderBtn.classList.add('hidden');
-    }
-  }
-  
-  // Check on page load
-  checkAnnouncementDeadline();
-  
-  // Recheck every minute to ensure accuracy
-  setInterval(checkAnnouncementDeadline, 60000);
+
 </script>
 
 </body>
